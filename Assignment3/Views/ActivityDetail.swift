@@ -9,19 +9,23 @@ import SwiftUI
 
 struct ActivityDetail: View {
     
-    var activity : ParkInfoModel
+    var activity : [ParkInfoModel]
     
     var body: some View {
          List {
-            VStack (alignment: .leading, spacing: 10){
-                Text(activity.states)
-                    .font(.system(size: 30))
-                Text(activity.fullName)
-                    .font(.system(size: 30))
-                Text(activity.designation)
-                    .font(.system(size: 30))
+             ForEach(activity) { each_activity in
+                 VStack (alignment: .leading, spacing: 10){
+                     Text(each_activity.states)
+                         .font(.system(size: 30))
+                     Text(each_activity.fullName)
+                         .font(.system(size: 20))
+                     Text(each_activity.designation)
+                         .font(.system(size: 20))
+                     
+                 }
+             }
                 
-            }
+            
             
         }
         

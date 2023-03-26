@@ -22,7 +22,8 @@ struct ParkActivityModel : Codable, Identifiable {
     let parks : [ParkInfoModel]
 }
 
-struct ParkInfoModel : Codable {
+struct ParkInfoModel : Codable, Identifiable {
+    let id = UUID()
     let states : String
     let parkCode : String
     let designation : String
