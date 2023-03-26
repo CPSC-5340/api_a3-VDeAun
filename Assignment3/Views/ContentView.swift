@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var activityvm = ActivityViewModel()
+    
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink {
-                    ActivityDetail() }
-                label: {
-                   Text( "Park Activity")
+                ForEach(activityvm.activityData) {
+                    activity in
+                    NavigationLink {
+                        ActivityDetail() }
+                    label: {
+                        Text(activity.name)
+                    }
                 }
-
                 
+            }
+            onAppear {
+                activityvm.fetchData()
             }
             .listStyle(.grouped)
             .navigationTitle("Park Activities")

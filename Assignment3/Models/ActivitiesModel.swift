@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct ParkResults {
+struct ParkResults : Codable {
     let total : String
     let limit : String
     let start : String
@@ -16,13 +16,13 @@ struct ParkResults {
     
 }
 
-struct ParkActivityModel {
+struct ParkActivityModel : Codable, Identifiable {
     let id : String
     let name : String
     let parks : [ParkInfoModel]
 }
 
-struct ParkInfoModel {
+struct ParkInfoModel : Codable {
     let states : String
     let parkCode : String
     let designation : String
