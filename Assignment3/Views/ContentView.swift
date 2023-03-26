@@ -17,14 +17,14 @@ struct ContentView: View {
                 ForEach(activityvm.activityData) {
                     activity in
                     NavigationLink {
-                        ActivityDetail() }
+                        ActivityDetail(activity : activity.parks) }
                     label: {
                         Text(activity.name)
                     }
                 }
                 
             }
-            onAppear {
+            .onAppear {
                 activityvm.fetchData()
             }
             .listStyle(.grouped)

@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct ActivityDetail: View {
+    
+    var activity : ParkInfoModel
+    
     var body: some View {
          List {
             VStack (alignment: .leading, spacing: 10){
-               Text("States")
+                Text(activity.states)
                     .font(.system(size: 30))
-                Text("Full Name")
+                Text(activity.fullName)
                     .font(.system(size: 30))
-                Text("Designation")
+                Text(activity.designation)
                     .font(.system(size: 30))
+                
             }
             
         }
@@ -25,8 +29,3 @@ struct ActivityDetail: View {
     }
 }
 
-struct ActivityDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivityDetail()
-    }
-}
