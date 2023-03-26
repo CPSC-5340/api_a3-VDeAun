@@ -9,7 +9,19 @@ import SwiftUI
 
 struct ActivityDetail: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+         List {
+            VStack (alignment: .leading, spacing: 10){
+               Text("States")
+                    .font(.system(size: 30))
+                Text("Full Name")
+                    .font(.system(size: 30))
+                Text("Designation")
+                    .font(.system(size: 30))
+            }
+            
+        }
+        
+        
     }
 }
 
